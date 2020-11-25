@@ -1,0 +1,14 @@
+.Input2 {
+  display: flex;
+  background-color: green;
+  padding: 0.5rem;
+}
+
+input {
+  width: 47.5vw;
+  padding: 0.75rem;
+}
+
+.searchBox {
+  margin-top: 7.5vh;
+}
