@@ -4,7 +4,7 @@ import SearchIcon from '@material-ui/icons/Search';
 function SearchBox() {
 
 
-    
+
     function searchShow(query){
         fetch(`http://api.tvmaze.com/search/shows?q=${query}`)
         .then(response =>  response.json())
@@ -49,14 +49,14 @@ function SearchBox() {
         <div className="searchBox">
            <form className="InputForm" >
             <div className="Input2">
-                <label for="name"><SearchIcon/></label>
+                <label for="name" class="search"></label>
                 <input type = "text" placeholder="Search" id="name"/>
-                <button>Submit</button>
+                <button><SearchIcon/></button>
             </div>      
         </form>
 
         <div className="OutputBox" >
-            <ul id="movie"></ul>
+            <ul id="movie" className="Shows"></ul>
 
         </div>
         </div>
