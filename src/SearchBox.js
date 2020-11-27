@@ -9,11 +9,9 @@ function SearchBox() {
         const API = "44d9af33";
         fetch(`http://www.omdbapi.com/?s=${query}&apikey=${API}`)
         .then(response =>  response.json())
-        .then((jsonData) =>{
-         
+        .then((jsonData) =>{      
           console.log(jsonData);
           renderResults(jsonData);
-         
          
          
         })
@@ -38,15 +36,16 @@ function SearchBox() {
       function renderResults(score){
         const uldoc = document.getElementById("movie");
         uldoc.innerHTML = "";
-        for(let i =0;i<7;i++)
+        for(let i =0;i<9;i++)
         {
           const list = document.createElement("li");
+          const pic = document.createElement("img");
+          const name = document.createElement("p"); 
+          pic.src=`${score.Search[i].Poster}`;
+          name.innerText = score.Search[i].Title;
+          list.appendChild(pic);
+          list.appendChild(name);
           list.classList.add("movie-item");
-
-          list.innerHTML +=`<img src="${score.Search[i].Poster}"/>`
-          list.innerHTML+=`<p>${score.Search[i].Title}</p>`;
-          list.innerHTML +=`<p>${score.Search[i].Year}</p>`;
-        
           uldoc.appendChild(list);
         }
       
